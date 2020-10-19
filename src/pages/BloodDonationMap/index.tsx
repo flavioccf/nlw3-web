@@ -70,8 +70,8 @@ function BloodDonationMap() {
                 </header>
 
                 <footer>
-                    <strong>Cidade</strong>
-                    <span>Estado</span>
+                    {/* <strong>Cidade</strong>
+                    <span>Estado</span> */}
                 </footer>
             </aside>
             <Map
@@ -98,9 +98,9 @@ function BloodDonationMap() {
                 })}                
             </Map>
 
-            <Link to="/blood_donation/create" className="create-blood-donation">
+            {/* <Link to="/blood_donation/create" className="create-blood-donation">
                 <FiPlus size={32} color="#FFF"/>
-            </Link>
+            </Link> */}
         </BloodDonationMapArea>
     );
 }
