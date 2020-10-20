@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { FiClock, FiInfo } from "react-icons/fi";
+import { FiClock } from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 
 import Sidebar from "../../components/Sidebar";
@@ -34,6 +33,8 @@ export default function BloodDonation() {
     api.get(`blood_donations/${params.id}`).then(response => {
       console.log(response.data);
       setBloodDonation(response.data);
+  }).catch(error => {
+    throw new Error(error);
   });
   },[params.id]);
 
@@ -47,27 +48,6 @@ export default function BloodDonation() {
       <main>
         <BloodDonationDetails>
           <img src={blood_donations.images[0].url} alt="Lar das meninas" />
-
-          {/* <div className="images">
-            <button className="active" type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-            <button type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-            <button type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-            <button type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-            <button type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-            <button type="button">
-              <img src="https://www.gcd.com.br/wp-content/uploads/2020/08/safe_image.jpg" alt="Lar das meninas" />
-            </button>
-          </div> */}
           
           <div className="orphanage-details-content">
           <h1>{blood_donations.name}</h1>
@@ -106,11 +86,6 @@ export default function BloodDonation() {
                 {blood_donations.work_hours}
               </div>
             </div>
-
-            {/* <button type="button" className="contact-button">
-              <FaWhatsapp size={20} color="#FFF" />
-              Entrar em contato
-            </button> */}
           </div>
         </BloodDonationDetails>
       </main>

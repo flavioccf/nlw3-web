@@ -70,6 +70,7 @@ export const BloodDonationMapArea = styled.div `
     .leaflet-container {
         z-index: 5;
         .leaflet-popup {
+            z-index: 99999;
                 background: rgba(255, 255, 255, 0.95);
                 border-radius: 20px;
                 box-shadow: none;
