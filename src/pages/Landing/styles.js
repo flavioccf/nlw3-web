@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import bkgImg from '../../images/blood-donate.svg';
+import metaImg from '../../images/iblood.png';
 
 export const PageLanding = styled.div `
     background: linear-gradient(329.54deg, #FF9A9A 0%, #B65F5F 100%);
